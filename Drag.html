@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style2.css" />
+  <title>Thỏ Thẩn Thơ</title>
+</head>
+
+<body>
+    <div class="flipbook">
+        <img src="Bìa (1).png" alt ="">
+        <div>
+            <img src="1.png">
+        </div>
+        <div>
+            <img src="2.png">
+        </div>
+
+        <div>
+            <div class="droptarget" id="droptarget3"></div>
+             <img src="Page3-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget3" src="Page3-1-T.png">
+            </div>
+
+            <div>
+                <div class="droptarget" id="droptarget4"></div>
+                 <img src="Page4-T.jpg" alt=""> 
+            </div>    
+                <div>
+                    <img class="Pic" draggable="true" id="dragtarget4" src="Page4-1-T.png">
+                </div>
+
+            <div>
+                <div class="droptarget" id="droptarget5"></div>
+                 <img src="Page5-T.jpg" alt=""> 
+            </div>    
+                <div>
+                    <img class="Pic" draggable="true" id="dragtarget5" src="Page5-1-T.png">
+                </div>
+            <div>
+                <div class="droptarget" id="droptarget6"></div>
+                 <img src="Page6-T.jpg" alt=""> 
+            </div>    
+                <div>
+                    <img class="Pic" draggable="true" id="dragtarget6" src="Page6-1-T.png">
+                </div>
+        
+                
+            
+
+        <div>
+            <img src="7.png">
+        </div>
+        <div>
+            <img src="8.png">
+        </div>
+
+        <div>
+            <div class="droptarget" id="droptarget9"></div>
+             <img src="Page9-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget9" src="Page9-1-T.png">
+            </div>
+
+
+        <div>
+            <div class="droptarget" id="droptarget10"></div>
+             <img src="Page10-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget10" src="Page10-1-T.png">
+            </div>
+
+        <div>
+            <div class="droptarget" id="droptarget11"></div>
+             <img src="Page11-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget11" src="Page11-1-T.png">
+            </div>
+        
+        <div>
+            <div class="droptarget" id="droptarget12"></div>
+             <img src="Page12-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget12" src="Page12-1-T.png">
+            </div>
+
+        <div class="AA">
+            <img src="13.png" >
+        </div>
+        <div class="AA">
+            <img src="14.png" >
+        </div>
+        <div>
+            <div class="droptarget" id="droptarget15"></div>
+             <img src="Page15-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget15" src="Page15-1-T.png">
+            </div>
+
+        <div>
+            <div class="droptarget" id="droptarget16"></div>
+             <img src="Page16-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget16" src="Page16-1-T.png">
+            </div>
+
+        <div>
+            <img src="17.png">
+        </div>
+        <div>
+            <img src="18.jpg">
+        </div>
+
+        <div>
+            <div class="droptarget" id="droptarget19"></div>
+             <img src="Page19-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget19" src="Page19-1T-removebg-preview.png">
+            </div>
+
+        <div>
+            <div class="droptarget" id="droptarget20"></div>
+             <img src="Page20-T.jpg" alt=""> 
+        </div>    
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget20" src="Page20-1-T.png">
+            </div>
+            
+        <div> 
+            <div class="droptarget" id="droptarget21"></div>
+             <img src="Page21-T.jpg" alt="" />
+        </div>
+            <div>
+                <img class="Pic" draggable="true" id="dragtarget201" src="Page21.1-T.png"alt=""></img>
+            </div>
+        <div>
+            <img src="Trang cuối.png">
+        </div>
+    </div>
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    $(".flipbook").turn();
+  </script>
+    <script>
+
+     /* Event fired on the drag target */
+        document.addEventListener("dragstart", function(event) {
+        event.dataTransfer.setData("Image", event.target.id);
+        });
+    
+    /* Events fired on the drop target */
+        document.addEventListener("dragenter", function(event) {
+            if (event.target.className == "droptarget") {
+            document.getElementById("demo").innerHTML = "";
+            event.target.style.backgroundColor = "lightblue";
+      }
+    });
+        document.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        });
+    
+    /* Events fired on the drop target */
+        document.addEventListener("dragleave", function(event) {
+            if (event.target.className == "droptarget") {
+            event.target.style.backgroundColor = "";
+         }
+
+        });
+        
+        document.addEventListener("drop", function(event) {
+            event.preventDefault();
+            if (event.target.className == "droptarget") {
+            event.target.style.backgroundColor = "";
+            const data = event.dataTransfer.getData("Image");
+            event.target.appendChild(document.getElementById(data));
+          
+
+         }
+        });
+
+    </script>
+</body>
+
+</html>
